@@ -4594,6 +4594,8 @@ static int decon_ioctl(struct fb_info *info, unsigned int cmd,
 			decon_regs.lcd_height = mode->height;
 			decon_regs.mode_idx = display_mode.index;
 			decon_regs.vrr_config.fps = mode->fps;
+			/* We always ask for HS mode */
+			decon_regs.vrr_config.mode = DECON_WIN_STATE_VRR_HSMODE;
 
 			/*
 			 * If no resolution change is requested by user space it means
